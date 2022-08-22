@@ -17,7 +17,7 @@ public class Group {
     String name;
     Date startDate;
     Date endDate;
-    @ManyToOne
+     @ManyToOne
     @JoinColumn(name = "course_id")
     Course course;
     @ManyToOne
