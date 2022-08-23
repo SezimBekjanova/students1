@@ -1,6 +1,7 @@
 package kg.megacom.students1.controllers;
 
 import kg.megacom.students1.models.Payment;
+import kg.megacom.students1.models.dto.PaymentDto;
 import kg.megacom.students1.services.PaymentService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,8 +17,8 @@ public class PaymentController {
         this.paymentService = paymentService;
     }
     @PostMapping("/add")
-    public Object createPayment(@RequestBody Payment payment){
-        return paymentService.createPayment(payment);
+    public Object createPayment(@RequestBody PaymentDto paymentDto){
+        return paymentService.createPayment(paymentDto);
     }
 
 }

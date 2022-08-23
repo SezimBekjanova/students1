@@ -1,6 +1,7 @@
 package kg.megacom.students1.controllers;
 
 import kg.megacom.students1.models.Student;
+import kg.megacom.students1.models.dto.StudentDto;
 import kg.megacom.students1.services.StudentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,8 +18,8 @@ public class StudentController {
         this.studentService = studentService;
     }
     @PostMapping("/add")
-    public  Object createStudent(@RequestBody Student student){
-        return studentService.createStudent(student);
+    public  Object createStudent(@RequestBody StudentDto studentDto){
+        return studentService.createStudent(studentDto);
     }
 
 }

@@ -1,8 +1,7 @@
 package kg.megacom.students1.controllers;
 
 import kg.megacom.students1.models.Course;
-import kg.megacom.students1.models.Lesson;
-import kg.megacom.students1.models.repositiries.CourseRepo;
+import kg.megacom.students1.repositiries.CourseRepo;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

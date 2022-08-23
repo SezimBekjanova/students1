@@ -1,6 +1,7 @@
 package kg.megacom.students1.controllers;
 
 import kg.megacom.students1.models.Lesson;
+import kg.megacom.students1.models.dto.LessonDto;
 import kg.megacom.students1.services.LessonService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +17,7 @@ public class LessonController {
         this.lessonService = lessonService;
     }
     @PostMapping("/add")
-    public Object createLesson(@RequestBody Lesson lesson){
-        return lessonService.createLesson(lesson);
+    public Object createLesson(@RequestBody LessonDto lessonDto){
+        return lessonService.createLesson(lessonDto);
     }
 }

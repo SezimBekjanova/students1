@@ -1,9 +1,7 @@
 package kg.megacom.students1.services.impl;
 
 import kg.megacom.students1.models.Course;
-import kg.megacom.students1.models.Group;
-import kg.megacom.students1.models.repositiries.CourseRepo;
-import kg.megacom.students1.models.repositiries.GroupRepo;
+import kg.megacom.students1.repositiries.CourseRepo;
 import kg.megacom.students1.services.CourseService;
 import org.springframework.stereotype.Service;
 

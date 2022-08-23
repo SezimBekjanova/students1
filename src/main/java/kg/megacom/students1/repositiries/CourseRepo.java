@@ -1,4 +1,4 @@
-package kg.megacom.students1.models.repositiries;
+package kg.megacom.students1.repositiries;
 
 import kg.megacom.students1.models.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
