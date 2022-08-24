@@ -1,9 +1,7 @@
 package kg.megacom.students1.services.impl;
 
 import kg.megacom.students1.mappers.LessonMapper;
-import kg.megacom.students1.models.Group;
 import kg.megacom.students1.models.Lesson;
-import kg.megacom.students1.models.Teacher;
 import kg.megacom.students1.models.dto.LessonDto;
 import kg.megacom.students1.repositiries.LessonRepo;
 import kg.megacom.students1.services.LessonService;

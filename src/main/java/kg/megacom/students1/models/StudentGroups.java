@@ -1,8 +1,10 @@
 package kg.megacom.students1.models;
 
+import kg.megacom.students1.models.enums.StudentStatus;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -15,7 +17,10 @@ public class StudentGroups {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     Date startDate;
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
+
     Date endDate;
     @ManyToOne
     @JoinColumn(name = "group_id")
@@ -23,4 +28,6 @@ public class StudentGroups {
     @ManyToOne
     @JoinColumn(name = "student_id")
     Student student;
+    @Enumerated(value = EnumType.STRING)
+    private StudentStatus status;
 }

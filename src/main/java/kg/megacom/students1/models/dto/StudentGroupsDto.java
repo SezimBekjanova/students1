@@ -1,5 +1,6 @@
 package kg.megacom.students1.models.dto;
 
+import kg.megacom.students1.models.enums.StudentStatus;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,4 +19,6 @@ public class StudentGroupsDto {
     Date endDate;
     GroupDto group;
     StudentDto student;
+    StudentStatus status;
+
 }

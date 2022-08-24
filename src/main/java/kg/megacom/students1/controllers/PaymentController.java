@@ -2,7 +2,6 @@ package kg.megacom.students1.controllers;
 
 import kg.megacom.students1.models.Payment;
 import kg.megacom.students1.models.dto.PaymentDto;
-import kg.megacom.students1.models.enums.PaymentStatus;
 import kg.megacom.students1.services.PaymentService;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +17,7 @@ public class PaymentController {
     public Object createPayment(@RequestBody PaymentDto paymentDto){
         return paymentService.createPayment(paymentDto);
     }
-    @PutMapping("/updete")
+    @PutMapping("/update")
     public Payment updatePayment(@RequestParam Long id, @RequestParam String status){
         return paymentService.update(id,status);
     }

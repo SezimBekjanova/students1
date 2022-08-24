@@ -1,7 +1,6 @@
 package kg.megacom.students1.controllers;
 
 import kg.megacom.students1.models.Course;
-import kg.megacom.students1.models.Group;
 import kg.megacom.students1.models.dto.CourseDto;
 import kg.megacom.students1.services.CourseService;
 import org.springframework.web.bind.annotation.*;

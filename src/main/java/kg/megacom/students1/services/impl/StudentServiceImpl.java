@@ -8,7 +8,6 @@ import kg.megacom.students1.services.StudentService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class StudentServiceImpl implements StudentService {
@@ -43,8 +42,17 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public void delete(Long id) {
-        studentRepo.delete(studentRepo.findById(id).get());
+    public Student delete(Long id) {
+        //
+        Student student = studentRepo.findById(id).get();
+        student.setDeleted(true);
+        studentRepo.save(student);
+        return studentRepo.findById(id).get();
+    }
+
+    @Override
+    public List<Student> findAllNotDelete() {
+        return studentRepo.findAllByIsDeletedIsFalse();
     }
 
 

@@ -1,7 +1,6 @@
 package kg.megacom.students1.controllers;
 
 import kg.megacom.students1.models.Group;
-import kg.megacom.students1.models.Lesson;
 import kg.megacom.students1.models.dto.GroupDto;
 import kg.megacom.students1.repositiries.GroupRepo;
 import kg.megacom.students1.services.GroupService;

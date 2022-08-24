@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
-import java.util.Optional;
+import java.util.List;
 
 @Repository
 public interface StudentRepo extends JpaRepository<Student,Long> {
@@ -15,4 +15,6 @@ public interface StudentRepo extends JpaRepository<Student,Long> {
     @Modifying(clearAutomatically = true)
     @Query(value = "update students set title =?2 where id=?1", nativeQuery = true)
     void update(Long id, String title);
+
+    List<Student> findAllByIsDeletedIsFalse();
 }

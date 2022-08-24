@@ -1,9 +1,9 @@
 package kg.megacom.students1.models;
 
-import kg.megacom.students1.models.enums.StudentStatus;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
+
 import javax.persistence.*;
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -16,6 +16,6 @@ public class Student {
         String name;
         String surname;
         String title;
-        @Enumerated(value = EnumType.STRING)
-        StudentStatus status;
+        @Column(name = "is_delete", columnDefinition = "boolean default false")
+        boolean isDeleted;
 }

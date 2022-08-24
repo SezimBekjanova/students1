@@ -1,7 +1,6 @@
 package kg.megacom.students1.services;
 
 import kg.megacom.students1.models.Group;
-import kg.megacom.students1.models.Student;
 import kg.megacom.students1.models.dto.GroupDto;
 
 import java.util.List;

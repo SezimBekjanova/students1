@@ -1,9 +1,7 @@
 package kg.megacom.students1.mappers;
 
 import kg.megacom.students1.models.StudentGroups;
-import kg.megacom.students1.models.Teacher;
 import kg.megacom.students1.models.dto.StudentGroupsDto;
-import kg.megacom.students1.models.dto.TeacherDto;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
