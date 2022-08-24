@@ -25,5 +25,7 @@ public class Payment {
     Student student;
     @Enumerated(value = EnumType.STRING)
     PaymentStatus status;
+    double summa;
+    double remainder;
 }
 

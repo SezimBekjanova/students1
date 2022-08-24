@@ -30,4 +30,5 @@ public class StudentGroups {
     Student student;
     @Enumerated(value = EnumType.STRING)
     private StudentStatus status;
+    double summa;
 }
