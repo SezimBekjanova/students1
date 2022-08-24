@@ -30,4 +30,15 @@ public class TeacherServiceImpl implements TeacherService {
         List<Teacher> teacherList = teacherRepo.findAll();
         return teacherMapper.toDtoList(teacherList);
     }
+
+    @Override
+    public Teacher update(Long id, String name) {
+        teacherRepo.update(id, name);
+        return teacherRepo.findById(id).get();
+    }
+
+    @Override
+    public void delete(Long id) {
+        teacherRepo.delete(teacherRepo.findById(id).get());
+    }
 }

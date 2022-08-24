@@ -8,6 +8,7 @@ import kg.megacom.students1.services.StudentService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StudentServiceImpl implements StudentService {
@@ -30,6 +31,20 @@ public class StudentServiceImpl implements StudentService {
         List<Student> studentList = studentRepo.findAll();
         return studentMapper.toDtoList(studentList);
 
+    }
+
+    @Override
+    public Student update(Long id, String title) {
+        //Optional<Student> student = studentRepo.findById(id);
+       // student.get().setTitle(title);
+        studentRepo.update(id, title);
+        return studentRepo.findById(id).get();
+
+    }
+
+    @Override
+    public void delete(Long id) {
+        studentRepo.delete(studentRepo.findById(id).get());
     }
 
 

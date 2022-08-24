@@ -14,7 +14,6 @@ import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
-@FieldDefaults(level = AccessLevel.PRIVATE)
 public class StudentMapper {
    private final ModelMapper modelMapper;
     public Student toEntity(StudentDto studentDto){

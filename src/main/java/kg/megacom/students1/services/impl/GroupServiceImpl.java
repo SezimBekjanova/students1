@@ -29,4 +29,15 @@ public class GroupServiceImpl implements GroupService {
         List<Group> groupList = groupRepo.findAll();
         return groupMapper.toDtoList(groupList);
     }
+
+    @Override
+    public Group update(Long id, String name) {
+        groupRepo.update(id, name);
+        return groupRepo.findById(id).get();
+    }
+
+    @Override
+    public void delete(Long id) {
+        groupRepo.delete(groupRepo.findById(id).get());
+    }
 }

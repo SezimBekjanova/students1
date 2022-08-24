@@ -1,11 +1,12 @@
 package kg.megacom.students1.controllers;
 
+import kg.megacom.students1.models.Student;
 import kg.megacom.students1.models.StudentGroups;
+import kg.megacom.students1.models.dto.StudentGroupsDto;
 import kg.megacom.students1.services.StudentGroupsService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
 
 @RestController
 @RequestMapping("/studentGroups")
@@ -16,7 +17,15 @@ public class StudentGroupsController {
         this.studentGroupsService = studentGroupsService;
     }
     @PostMapping("/add")
-    public  Object createStudentGroups(@RequestBody StudentGroups studentGroups){
-        return  studentGroupsService.createStudentGroups(studentGroups);
+    public  Object createStudentGroups(@RequestBody StudentGroupsDto studentGroupsDto){
+        return  studentGroupsService.createStudentGroups(studentGroupsDto);
+    }
+    @PutMapping("/update")
+    public StudentGroups update(@RequestParam Long id, @RequestParam Date end_date){
+        return studentGroupsService.update(id,end_date);
+    }
+    @DeleteMapping("/delete")
+    public void delete(@RequestParam Long id){
+        studentGroupsService.delete(id);
     }
 }

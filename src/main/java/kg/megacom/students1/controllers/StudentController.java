@@ -4,10 +4,7 @@ import kg.megacom.students1.models.Student;
 import kg.megacom.students1.models.dto.StudentDto;
 import kg.megacom.students1.services.StudentService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/student")
@@ -20,6 +17,14 @@ public class StudentController {
     @PostMapping("/add")
     public  Object createStudent(@RequestBody StudentDto studentDto){
         return studentService.createStudent(studentDto);
+    }
+    @PutMapping("/update")
+    public Student updateStudent(@RequestParam Long id, @RequestParam String title){
+        return studentService.update(id, title);
+    }
+    @DeleteMapping("/delete")
+    public void delete(@RequestParam Long id){
+        studentService.delete(id);
     }
 
 }

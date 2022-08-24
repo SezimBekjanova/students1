@@ -2,11 +2,9 @@ package kg.megacom.students1.controllers;
 
 import kg.megacom.students1.models.Payment;
 import kg.megacom.students1.models.dto.PaymentDto;
+import kg.megacom.students1.models.enums.PaymentStatus;
 import kg.megacom.students1.services.PaymentService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/payment")
@@ -19,6 +17,14 @@ public class PaymentController {
     @PostMapping("/add")
     public Object createPayment(@RequestBody PaymentDto paymentDto){
         return paymentService.createPayment(paymentDto);
+    }
+    @PutMapping("/updete")
+    public Payment updatePayment(@RequestParam Long id, @RequestParam String status){
+        return paymentService.update(id,status);
+    }
+    @DeleteMapping("/delete")
+    public void delete(@RequestParam Long id){
+        paymentService.delete(id);
     }
 
 }
