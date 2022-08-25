@@ -26,7 +26,7 @@ public class PaymentController {
         paymentService.delete(id);
     }
     @PostMapping("/v2/add")
-    public Object createPaymentV2(@RequestBody Long group_id,@RequestParam Long student_id,@RequestParam double summa ){
+    public Object createPaymentV2(@RequestParam Long group_id,@RequestParam Long student_id,@RequestParam double summa ){
         return paymentService.createPaymentV2(group_id,student_id,summa);
     }
 

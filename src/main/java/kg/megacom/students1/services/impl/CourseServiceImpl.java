@@ -40,4 +40,10 @@ public class CourseServiceImpl implements CourseService {
         courseRepo.delete(courseRepo.findById(id).get());
     }
 
+
+    @Override
+    public Course findById(Long id) {
+        return courseRepo.findById(id).orElseThrow();
+    }
+
 }

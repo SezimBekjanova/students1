@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class PaymentServiceImpl implements PaymentService {
@@ -64,7 +65,7 @@ public class PaymentServiceImpl implements PaymentService {
         if(student.isDeleted()){
             return ResponseEntity.ok("Студент был удален");
         }
-        if(student.equals(null)){
+        if(Objects.isNull(student)){
             return  ResponseEntity.ok("Нет такого студента");
         }
         Payment payment = new Payment();
@@ -73,14 +74,17 @@ public class PaymentServiceImpl implements PaymentService {
         payment.setGroup(groupRepo.findById(group_id).get());
         payment.setSumma(summa);
         Group group = groupRepo.findById(group_id).get();
-        Course course= (Course) courseRepo.findAllById(Collections.singleton(group.getId()));
-        double result = summa-course.getPrice();
+        if(Objects.isNull(group)){
+            return  ResponseEntity.ok("Нет такой группы");
+        }
+        double result = group.getCourse().getPrice()-summa;
         payment.setRemainder(result);
         if(result>=0){
             payment.setStatus(PaymentStatus.PAID);
         }if(summa==0){
             payment.setStatus(PaymentStatus.UNPAID);
         }if(result<0){
+            payment.setRemainder(0);
             payment.setStatus(PaymentStatus.REMAINDER);
         }
 

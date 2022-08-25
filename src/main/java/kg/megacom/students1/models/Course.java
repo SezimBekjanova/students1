@@ -16,5 +16,5 @@ public class Course {
     Long id;
     String title;
     double price;
-    String duration;
+    int duration;
 }

@@ -10,4 +10,5 @@ public interface CourseService {
     List<CourseDto> findAll();
     Course update(Long id,double price);
     void delete(Long id);
+    Course findById(Long id);
 }
